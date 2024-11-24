@@ -146,6 +146,196 @@ h6 {
   color: #ddd; 
 }
 
+
+/* Para pantallas pequeñas (entre 768px y 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  #topbar {
+    height: 50px; /* Ajustar la altura */
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+  }
+
+  .topbar-links {
+    font-size: 12px; /* Reducir más el tamaño de los enlaces */
+    text-align: center; /* Centrar los enlaces */
+    display: block; /* Hacer los enlaces en bloque */
+  }
+
+  .logo img {
+    height: 40px; /* Reducir el tamaño de la imagen */
+  }
+
+  /* Espaciado entre los enlaces */
+  .topbar-links a {
+    margin-bottom: 10px;
+    display: block;
+  }
+}
+
+/* Para pantallas muy pequeñas (menos de 768px) */
+@media (max-width: 768px) {
+  #topbar {
+    height: 40px; /* Ajustar la altura */
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+  }
+
+  .topbar-links {
+    font-size: 14px; /* Reducir el tamaño de los enlaces */
+    text-align: center; /* Centrar los enlaces */
+    display: block; /* Hacer los enlaces en bloque */
+  }
+
+  .logo img {
+    height: 35px; /* Reducir el tamaño de la imagen */
+  }
+
+  .topbar-links a {
+    margin-bottom: 8px;
+    display: block;
+  }
+}
+ 
+
+/* Para pantallas muy pequeñas (móviles) */
+@media (max-width:  768px)and (min-width: 480px) {
+  #topbar {
+    height: 40px; /* Ajustar la altura */
+    font-size: 14px; /* Ajustar el tamaño de la fuente */
+  }
+
+  .topbar-links {
+    font-size: 14px; /* Ajustar el tamaño de los enlaces */
+    text-align: center; /* Centrar los enlaces */
+    display: block; /* Hacer los enlaces en bloque */
+  }
+
+  .logo img {
+    height: 1px; /* Ajustar el tamaño de la imagen */
+  }
+
+  .topbar-links a {
+    margin-bottom: 6px;
+    display: block;
+  }
+}
+/* Para pantallas entre 480px y 709px */
+@media (max-width: 709px) and (min-width: 480px) {
+  #topbar {
+    height: 40px; /* Ajustar la altura */
+    font-size: 12px; /* Ajustar el tamaño de la fuente */
+  }
+
+  .topbar-links {
+    font-size: 12px; /* Ajustar el tamaño de los enlaces */
+    text-align: center; /* Centrar los enlaces */
+    display: block; /* Hacer los enlaces en bloque */
+  }
+
+  .logo img {
+    height: 1px; /* Ajustar el tamaño de la imagen */
+  }
+
+  .topbar-links a {
+    margin-bottom: 6px;
+    display: block;
+  }
+}
+/* Para pantallas entre 480px y 709px */
+@media (max-width: 640px) and (min-width: 480px) {
+  #topbar {
+    height: 40px; /* Ajustar la altura */
+    font-size: 12px; /* Ajustar el tamaño de la fuente */
+  }
+
+  .topbar-links {
+    font-size: 12px; /* Ajustar el tamaño de los enlaces */
+    text-align: center; /* Centrar los enlaces */
+    display: block; /* Hacer los enlaces en bloque */
+  }
+
+  .logo img {
+    height: auto;
+  }
+
+  .topbar-links a {
+    margin-bottom: 6px;
+    display: block;
+  }
+}
+/* Para pantallas de hasta 480px */
+@media (max-width: 571px)  {
+  #topbar {
+    height: 40px; /* Ajustar la altura */
+    font-size: 5px; /* Ajustar el tamaño de la fuente */
+  }
+  .topbar-links {
+    font-size: 9px; /* Ajustar el tamaño de los enlaces */
+    text-align: center; /* Centrar los enlaces */
+    display: block; /* Hacer los enlaces en bloque */
+  }
+  #topbar .logo img {
+    height: 20px; /* Tamaño adecuado para que el logo sea visible sin ocupar mucho espacio */
+  max-height: 30px; /* Asegura que el logo no se haga demasiado grande */
+  width: auto; /* Mantener la relación de aspecto original */
+}
+
+  .topbar-links a {
+    margin-bottom: 6px;
+    display: block;
+  }
+}
+
+
+
+/* Para pantallas de hasta 480px */
+@media (max-width: 480px)  {
+  #topbar {
+    height: 40px; /* Ajustar la altura */
+    font-size: 5px; /* Ajustar el tamaño de la fuente */
+  }
+
+  .topbar-links {
+    font-size: 9px; /* Ajustar el tamaño de los enlaces */
+    text-align: center; /* Centrar los enlaces */
+    display: block; /* Hacer los enlaces en bloque */
+  }
+  #topbar .logo img {
+    height: 20px; /* Tamaño adecuado para que el logo sea visible sin ocupar mucho espacio */
+  max-height: 30px; /* Asegura que el logo no se haga demasiado grande */
+  width: auto; /* Mantener la relación de aspecto original */
+}
+
+  .topbar-links a {
+    margin-bottom: 6px;
+    display: block;
+  }
+}
+/* Para pantallas de hasta 320px */
+@media (max-width: 423px)  {
+  #topbar {
+    height: 40px; /* Ajustar la altura */
+    font-size: 16px; /* Ajustar el tamaño de la fuente */
+  }
+
+  .topbar-links {
+    font-size: 7px; /* Ajustar el tamaño de los enlaces */
+    text-align: center; /* Centrar los enlaces */
+    display: block; /* Hacer los enlaces en bloque */
+  }
+  #topbar .logo img {
+    height: 20px; /* Tamaño adecuado para que el logo sea visible sin ocupar mucho espacio */
+  max-height: 30px; /* Asegura que el logo no se haga demasiado grande */
+  width: auto; /* Mantener la relación de aspecto original */
+}
+
+  .topbar-links a {
+    margin-bottom: 6px;
+    display: block;
+  }
+}
+
+
+
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
