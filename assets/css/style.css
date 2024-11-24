@@ -203,7 +203,7 @@ h6 {
   }
 
   .topbar-links {
-    font-size: 14px; /* Ajustar el tamaño de los enlaces */
+    font-size: 10px; /* Ajustar el tamaño de los enlaces */
     text-align: center; /* Centrar los enlaces */
     display: block; /* Hacer los enlaces en bloque */
   }
@@ -225,7 +225,7 @@ h6 {
   }
 
   .topbar-links {
-    font-size: 12px; /* Ajustar el tamaño de los enlaces */
+    font-size: 10px; /* Ajustar el tamaño de los enlaces */
     text-align: center; /* Centrar los enlaces */
     display: block; /* Hacer los enlaces en bloque */
   }
@@ -247,7 +247,7 @@ h6 {
   }
 
   .topbar-links {
-    font-size: 12px; /* Ajustar el tamaño de los enlaces */
+    font-size: 10px; /* Ajustar el tamaño de los enlaces */
     text-align: center; /* Centrar los enlaces */
     display: block; /* Hacer los enlaces en bloque */
   }
@@ -532,15 +532,64 @@ h6 {
   color: #fff;
 }
 
+
 @media (max-width: 992px) {
   .mobile-nav-toggle {
     display: block;
   }
 
   .navbar ul {
-    flex-wrap: wrap;
+    display: none; /* El menú está oculto inicialmente */
+    flex-direction: column; /* Los elementos del menú se apilan verticalmente */
+    width: 100%; /* Asegurarse de que ocupe todo el ancho */
+    background-color: #fff; /* Fondo blanco para el menú */
+    position: absolute; /* El menú se posiciona sobre el contenido */
+    top: 100%; /* Debe aparecer justo debajo de la barra de navegación */
+    left: 0; /* Alineado a la izquierda */
+    z-index: 9999; /* Para asegurarse de que quede sobre otros contenidos */
+    padding: 10px 0; /* Espaciado entre los elementos */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra del menú */
+    overflow-y: auto; /* Habilitar desplazamiento si es necesario */
+    max-height: 80vh; /* Limitar la altura del menú */
   }
-}
+
+  /* Cuando se agrega la clase 'active', se muestra el menú */
+  .navbar.active ul {
+    display: flex; /* Mostrar el menú al activar la clase 'active' */
+  }
+
+  /* Estilo para cada elemento del menú */
+  .navbar ul li {
+    list-style: none; /* Eliminar los puntos de la lista */
+    width: 100%; /* Asegurarse de que los elementos ocupen todo el ancho */
+    text-align: left; /* Alinear los elementos a la izquierda */
+    padding: 10px 20px; /* Espaciado para los elementos */
+  }
+
+  .navbar ul li a {
+    display: block; /* Hacer que los enlaces ocupen todo el espacio */
+    padding: 10px 0; /* Ajustar el padding de los enlaces */
+    color: black; /* Color de texto */
+    text-decoration: none; /* Eliminar subrayado */
+   
+  }
+
+  .navbar ul li a:hover {
+    background-color: #f2f2f2; /* Fondo en hover */
+  }
+
+  /* Estilos para los submenús (dropdown) */
+  .navbar ul li .dropdown ul {
+    display: none; /* Los submenús están ocultos por defecto */
+    position: absolute; /* Posicionarlos dentro del elemento principal */
+    left: 100%;
+    top: 0;
+  }
+
+  .navbar ul li:hover .dropdown ul {
+    display: block; /* Mostrar el submenú cuando el mouse pasa sobre el elemento */
+  }
+}    
 
 .navbar-mobile {
   position: fixed;
@@ -577,27 +626,29 @@ h6 {
 .navbar-mobile a,
 .navbar-mobile a:focus {
   padding: 10px 20px;
-  font-size: 15px;
-  color: #555555;
+ 
 }
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #3fbbc0;
+  color:  #22294d;
 }
+
 
 .navbar-mobile .dropdown ul {
   position: static;
-  display: none;
+  display: none; /* Ocultar inicialmente */
   margin: 10px 20px;
   padding: 10px 0;
   z-index: 99;
-  opacity: 1;
-  visibility: visible;
   background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más definida */
+  border-radius: 8px; /* Bordes redondeados para un diseño limpio */
+  opacity: 1; /* Totalmente visible */
+  visibility: visible; /* Asegurarse de que sea visible */
 }
+
 
 .navbar-mobile .dropdown ul li {
   min-width: 200px;
@@ -614,11 +665,12 @@ h6 {
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
-  color: #3fbbc0;
+  color:  #22294d;
 }
 
 .navbar-mobile .dropdown>.dropdown-active {
   display: block;
+  
 }
 
 /*--------------------------------------------------------------
@@ -705,7 +757,16 @@ h6 {
   left: 0;
   transform: translate3d(0, 0, 0);
 }
-
+#hero .carousel-control-next-icon{
+  position: relative;
+  top: 5rem;
+  left: -2rem;
+}
+#hero .carousel-control-prev-icon{
+  position: relative;
+  top: 5rem;
+  left: 2rem;
+}
 #hero .carousel-control-next-icon,
 #hero .carousel-control-prev-icon {
   background: none;
@@ -722,6 +783,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+ 
 }
 
 #hero .carousel-control-next-icon:hover,

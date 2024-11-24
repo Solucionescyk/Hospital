@@ -115,42 +115,58 @@
     onscroll(document, toggleBacktotop)
   }
 
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
 
+   
   /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
+ * Mobile nav toggle
+ */
+on('click', '.mobile-nav-toggle', function(e) {
+  console.log('Botón de hamburguesa clickeado');
+  
+  select('#navbar').classList.toggle('navbar-mobile');
+  console.log('Clase navbar-mobile alternada en #navbar');
+
+  this.classList.toggle('bi-list');
+  this.classList.toggle('bi-x');
+  console.log('Icono alternado: bi-list y bi-x');
+});
+
+/**
+ * Mobile nav dropdowns activate
+ */
+on('click', '.navbar .dropdown > a', function(e) {
+  if (select('#navbar').classList.contains('navbar-mobile')) {
+    e.preventDefault();
+    console.log('Dropdown activado, evitando el comportamiento predeterminado');
+    
+    this.nextElementSibling.classList.toggle('dropdown-active');
+    console.log('Clase dropdown-active alternada en el siguiente elemento del dropdown');
+  }
+}, true);
+
+/**
+ * Scrool with offset on links with a class name .scrollto
+ */
+on('click', '.scrollto', function(e) {
+  if (select(this.hash)) {
+    e.preventDefault();
+    console.log('Enlace con clase .scrollto clickeado');
+
+    let navbar = select('#navbar');
+    if (navbar.classList.contains('navbar-mobile')) {
+      navbar.classList.remove('navbar-mobile');
+      console.log('Clase navbar-mobile removida de #navbar');
+
+      let navbarToggle = select('.mobile-nav-toggle');
+      navbarToggle.classList.toggle('bi-list');
+      navbarToggle.classList.toggle('bi-x');
+      console.log('Icono alternado: bi-list y bi-x');
     }
-  }, true)
 
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
-
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
-    }
-  }, true)
+    scrollto(this.hash);
+    console.log('Desplazamiento con offset hacia', this.hash);
+  }
+}, true);
 
   /**
    * Scroll with ofset on page load with hash links in the url
